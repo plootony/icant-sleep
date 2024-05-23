@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+.player {
+    margin: 0 auto;
+    padding: 32px;
+    max-width: 768px;
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player__title {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.player__subtitle {
+    margin-top: 12px;
+    font-size: 22px;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.animation {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animation__media {
+    height: auto;
+    width: clamp(720px, 70vw, 100vh); /* Используем clamp() для ширины */
+    min-width: 1200px;
+    position: relative;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 72px 42px black;
+}
+
+.animation video {
+    width: 100%;
+    height: clamp(300px, 70vw, 100vh); /* Используем clamp() для высоты */
+    position: relative;
+    z-index: -1;
+    object-fit: contain;
+}
+
+.controls {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn {
+    width: 56px;
+    height: 56px;
+    position: relative;
+    z-index: 1;
+    background: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn--player {
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.btn--player.is-active, .btn--player:hover {
+    opacity: 1;
+}
+
+.icon {
+    stroke: white;
+    fill: white;
+    width: 56px;
+    height: 56px;
+}
